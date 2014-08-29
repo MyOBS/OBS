@@ -21,6 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    前台首页！！
+    很酷的前台首页！！
   </body>
 </html>
