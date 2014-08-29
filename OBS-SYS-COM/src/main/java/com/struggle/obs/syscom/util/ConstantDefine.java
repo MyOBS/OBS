@@ -1,5 +1,10 @@
 package com.struggle.obs.syscom.util;
 
+/**
+ * 常量类
+ * @author tangyh
+ *  2014年8月29日 下午8:38:03
+ */
 public class ConstantDefine {
      /**
      * 字符编码： UTF-8

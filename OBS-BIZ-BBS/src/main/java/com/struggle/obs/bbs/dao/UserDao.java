@@ -5,6 +5,7 @@ import com.struggle.obs.bean.user.User;
 import com.struggle.obs.syscom.dao.GenericDao;
 
 /**
+ * 用户Dao
  * @author tangyh
  *  2014年8月19日 下午11:42:35
  */

@@ -6,6 +6,7 @@ package com.struggle.obs.formbean;
 import com.struggle.obs.bean.user.User;
 
 /**
+ * 板块表单对象
  * @author tangyh
  *  2014年8月22日 下午3:52:13
  */
