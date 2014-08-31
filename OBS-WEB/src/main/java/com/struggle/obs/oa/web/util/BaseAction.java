@@ -15,8 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.struggle.obs.bbs.service.ConstsService;
+import com.struggle.obs.bbs.service.CritiqueService;
 import com.struggle.obs.bbs.service.ForumService;
 import com.struggle.obs.bbs.service.ReplyService;
+import com.struggle.obs.bbs.service.ScoreService;
 import com.struggle.obs.bbs.service.ThemeService;
 import com.struggle.obs.bbs.service.TopicService;
 import com.struggle.obs.bbs.service.TypeService;
@@ -73,6 +76,15 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
     /** 主题Service  */
     @Autowired
     protected ThemeService themeService;
+    /** 常量Service */
+    @Autowired
+    protected ConstsService constsService;
+    /** 评分  */
+    @Autowired
+    protected ScoreService scoreService;
+    /**  点评 */
+    @Autowired
+    protected CritiqueService critiqueService;
 
     // ---------------Action公共字段----------------------
 

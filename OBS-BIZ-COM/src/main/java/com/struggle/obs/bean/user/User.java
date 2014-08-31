@@ -151,7 +151,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "baseProfileId")
 	public BaseProfile getBaseProfile() {
 		return baseProfile;
@@ -178,7 +178,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "contactProfileId")
 	public ContactProfile getContactProfile() {
 		return contactProfile;
@@ -199,7 +199,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "workProfileId")
 	public WorkProfile getWorkProfile() {
 		return workProfile;
@@ -220,7 +220,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "infoProfileId")
 	public InfoProfile getInfoProfile() {
 		return infoProfile;
@@ -241,7 +241,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "eduProfileId")
 	public EduProfile getEduProfile() {
 		return eduProfile;
@@ -262,7 +262,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "statisticsProfileId")
 	public StatisticsProfile getStatisticsProfile() {
 		return statisticsProfile;
@@ -283,7 +283,7 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	 */
 	// optional 属性是定义该关联类是否必须存在,值为 false 时,关联类双方都必 须存在,如果关系被维护端不存在,查询的结果为
 	// null.值为 true 时关系被维护端可以不存在，
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true,fetch=FetchType.LAZY)
 	@JoinColumn(name = "realNameVerifyId")
 	public RealNameVerify getRealNameVerify() {
 		return realNameVerify;

@@ -45,6 +45,9 @@ public class GenericDaoImpl<T, PK extends Serializable> implements
 	}
 
 	public T findByPK(PK pk, boolean lock) throws HibernateException {
+		if(pk == null){
+			return null;
+		}
 		T entity = null;
 		Session session = getSession();
 		entity = (T) session.get(getPersistentClass(), pk);

@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -50,15 +51,32 @@ public class Topic extends Article {
 	private Theme theme;
 	/** 分类 */
 	private Type type;
+	/** 帖子获得的金钱 */
+	private Long money;
 	/** 评分 */
 	private Set<Score> scores = new HashSet<Score>();
 	/** 点评 */
 	private Set<Critique> critiques = new HashSet<Critique>();
 	/**
+	 * 帖子获得的金钱 
+	 * @return 
+	 */
+	@Column(name="money")
+	public Long getMoney() {
+		return money;
+	}
+	/**
+	 * @param 帖子获得的金钱 money
+	 */
+	public void setMoney(Long money) {
+		this.money = money;
+	}
+	/**
 	 * 评分 
 	 * @return 
 	 */
 	@OneToMany(cascade={CascadeType.ALL}, mappedBy="topic",fetch=FetchType.LAZY)
+	@OrderBy("addDate DESC")
 	public Set<Score> getScores() {
 		return scores;
 	}
@@ -74,6 +92,7 @@ public class Topic extends Article {
 	 * @return 
 	 */
 	@OneToMany(cascade={CascadeType.ALL}, mappedBy="topic",fetch=FetchType.LAZY)
+	@OrderBy("addDate DESC")
 	public Set<Critique> getCritiques() {
 		return critiques;
 	}

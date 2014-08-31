@@ -31,7 +31,7 @@ public class Consts extends BaseModel{
 	 * 记录类型 
 	 * @return 
 	 */
-	@Column(name="recType", unique=true, nullable=false,length=10)
+	@Column(name="recType", nullable=false,length=50)
 	public String getRecType() {
 		return recType;
 	}
@@ -98,6 +98,23 @@ public class Consts extends BaseModel{
 		this.orderId = orderId;
 	}
 	public Consts() {
+	}
+	/**
+	 * 
+	 * @param recType 记录类型
+	 * @param recValue 记录值
+	 * @param recName 记录名称
+	 * @param descript 描述
+	 * @param orderId 排序号
+	 */
+	public Consts(String recType, String recValue, String recName,
+			String descript, int orderId) {
+		super();
+		this.recType = recType;
+		this.recValue = recValue;
+		this.recName = recName;
+		this.descript = descript;
+		this.orderId = orderId;
 	}
 	
 }

@@ -24,6 +24,26 @@ public class Utils {
 	public static boolean IsNull(Long value) {
 		return value == null;
 	}
+	/**
+	 * 是自然数吗？  <br>
+	 * value 不等于 null，且大于0时，返回true
+	 * 2014年8月29日 下午11:17:34
+	 * @param value
+	 * @return boolean
+	 */
+	public static boolean IsNaturalNum(Long value) {
+		return value != null && value > 0L;
+	}
+	/**
+	 * 是自然数吗？  <br>
+	 * value 不等于 null，且大于0时，返回true
+	 * 2014年8月29日 下午11:17:34
+	 * @param value
+	 * @return boolean
+	 */
+	public static boolean IsNaturalNum(Double value) {
+		return value != null && value > 0;
+	}
 
 	/**
 	 * value为null,则返回true
@@ -106,6 +126,16 @@ public class Utils {
 	 */
 	public static String formatSysDate() {
 		return formatDate(new Date());
+	}
+
+	/**
+	 * value==null就返回0
+	 * 2014年8月30日 下午2:42:55
+	 * @param money
+	 * @return Long
+	 */
+	public static Long switchInt(Long value) {
+		return value == null ? 0 : value;
 	}
 
 }

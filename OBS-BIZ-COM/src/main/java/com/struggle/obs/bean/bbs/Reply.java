@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 /**
@@ -32,14 +33,48 @@ public class Reply extends Article{
 	private Reply parent;
 	/** 子回复 */
 	private Set<Reply> children = new HashSet<Reply>();
+	/** 回复获得的金钱 */
+	private Long money;
 	/** 点评 */
 	private Set<Critique> critiques = new HashSet<Critique>();
+	/** 评分 */
+	private Set<Score> scores = new HashSet<Score>();
 	
+	/**
+	 * 回复获得的金钱 
+	 * @return 
+	 */
+	@Column(name="money")
+	public Long getMoney() {
+		return money;
+	}
+	/**
+	 * @param 回复获得的金钱 money
+	 */
+	public void setMoney(Long money) {
+		this.money = money;
+	}
+	/**
+	 * 评分 
+	 * @return 
+	 */
+	@OneToMany(cascade={CascadeType.ALL}, mappedBy="reply",fetch=FetchType.LAZY)
+	@OrderBy("addDate DESC")
+	public Set<Score> getScores() {
+		return scores;
+	}
+	/**
+	 * @param 评分 scores
+	 */
+	public void setScores(Set<Score> scores) {
+		this.scores = scores;
+	}
 	/**
 	 * 点评 
 	 * @return 
 	 */
 	@OneToMany(cascade={CascadeType.ALL}, mappedBy="reply",fetch=FetchType.LAZY)
+	@OrderBy("addDate DESC")
 	public Set<Critique> getCritiques() {
 		return critiques;
 	}

@@ -87,4 +87,11 @@ public class ConstantDefine {
 	 */
 	public static final int TOTAL_TOPIC_COUNT = 2;
 	
+	/** 评分理由：用于常量表的recType */
+	public static final String SCORE_REAON = "score_reaon";
+	/** 支持 */
+	public static final String SUPPORT = "support";
+	/** 反对 */
+	public static final String AGAINST = "against";
+	
 }

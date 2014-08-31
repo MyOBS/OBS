@@ -16,8 +16,7 @@ public class UserDaoImpl extends GenericDaoImpl<User, Long> implements UserDao {
 	public User findAdminByPwd(User user) {
 		return (User) getSession()
 				.createQuery(//
-						"FROM User u WHERE u.loginName=? and u.passWord=? and u.isAdmin=?")
-				//
+						"FROM User u WHERE u.loginName=? and u.passWord=? and u.admin=?")
 				.setParameter(0, user.getLoginName())
 				.setParameter(1, user.getPassWord())
 				.setParameter(2, user.isAdmin()).uniqueResult();

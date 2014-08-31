@@ -4,14 +4,14 @@
 	<title>帖子回复</title>
     <%@ include file="/WEB-INF/jsps/public/commons.jspf" %>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/forum.css" />
-	<script language="javascript" src="${pageContext.request.contextPath}/fckeditor/fckeditor.js" charset="utf-8"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/fckeditor/fckeditor.js" charset="utf-8"></script>
     <script type="text/javascript">
 		$(function(){
 			var fck = new FCKeditor("content");
 			fck.Width = "99%";
 			fck.Height = "100%";
 			fck.ToolbarSet = "bbs";
-			fck.BasePath = "${pageContext.request.contextPath}/fckeditor/";
+			fck.BasePath = "${basePath}fckeditor/";
 			//fck.Config['SkinPath'] = "${pageContext.request.contextPath}/scriipt/fckeditoreditor/skins/office2003/";
 			//fck.Config['SkinPath'] = "http://bbs.itcast.cn:80/widgets/fckeditor/editor/skins/office2003/";
 			fck.ReplaceTextarea();

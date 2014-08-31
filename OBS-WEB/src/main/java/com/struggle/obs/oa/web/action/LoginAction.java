@@ -38,7 +38,8 @@ public class LoginAction extends BaseAction<User> {
 				return SUCCESS;
 			}
 		}catch(OBSException e){
-			addFieldError("loginName", "服务器好像罢工了...");
+			message = "服务器好像罢工了...";
+			//addFieldError("loginName", "服务器好像罢工了...");
 		}
 		return NONE;
 	}

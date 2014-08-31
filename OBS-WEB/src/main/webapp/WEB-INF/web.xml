@@ -34,6 +34,15 @@
 		<filter-name>PrivilegeFilter</filter-name>
 		<url-pattern>/control/*</url-pattern>
 	</filter-mapping>
+	
+	<filter>
+        <filter-name>codeFilter</filter-name>
+        <filter-class>com.struggle.obs.oa.web.filter.SetCodeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>codeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
 
 	<filter>
 		<filter-name>struts2</filter-name>

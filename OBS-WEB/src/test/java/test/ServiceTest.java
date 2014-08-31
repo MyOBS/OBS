@@ -4,7 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.struggle.obs.bbs.service.TypeService;
+import com.struggle.obs.bbs.service.ConstsService;
+import com.struggle.obs.bean.base.Consts;
 
 @SuppressWarnings("unused")
 public class ServiceTest {
@@ -31,6 +32,23 @@ public class ServiceTest {
 //		TypeService service = (TypeService) ac.getBean("typeServiceImpl");
 //		service.resetTypeData();
 	}
+	
+	/**  勿删:初始化常量表 "评分理由" 数据4 */
+	@Test
+	public void initConstsData(){
+//		ConstsService service = (ConstsService) ac.getBean("constsServiceImpl");
+//		Consts c1 = new Consts("score_reaon","1","很给力！","评分理由",1);
+//		Consts c2 = new Consts("score_reaon","2","神马都是浮云","评分理由",2);
+//		Consts c3 = new Consts("score_reaon","3","赞一个！","评分理由",3);
+//		Consts c4 = new Consts("score_reaon","4","山寨","评分理由",4);
+//		Consts c5 = new Consts("score_reaon","5","蛋定","评分理由",5);
+//		service.save(c1);
+//		service.save(c2);
+//		service.save(c3);
+//		service.save(c4);
+//		service.save(c5);
+	}
+	
 
 	/**
 	 * 2014年8月19日 下午5:16:27

@@ -26,6 +26,8 @@ public class Score extends BaseModelSub {
 	private String reaon;
 	/** 所属帖子 */
 	private Topic topic;
+	/** 所属回复 */
+	private Reply reply;
 	/** 评分人 */
 	private User user;
 	public Score() {
@@ -73,6 +75,23 @@ public class Score extends BaseModelSub {
 	public void setTopic(Topic topic) {
 		this.topic = topic;
 	}
+	
+	
+	/**
+	 * 所属回复 
+	 * @return 
+	 */
+	@ManyToOne(cascade = CascadeType.REFRESH,fetch=FetchType.LAZY)
+	@JoinColumn(name = "replyId")
+	public Reply getReply() {
+		return reply;
+	}
+	/**
+	 * @param 所属回复 reply
+	 */
+	public void setReply(Reply reply) {
+		this.reply = reply;
+	}
 	/**
 	 * 评分人 
 	 * @return 
@@ -87,6 +106,20 @@ public class Score extends BaseModelSub {
 	 */
 	public void setUser(User user) {
 		this.user = user;
+	}
+	/** 
+	 * 2014年8月30日 上午11:20:31
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Score [money=");
+		builder.append(money);
+		builder.append(", reaon=");
+		builder.append(reaon);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 }
