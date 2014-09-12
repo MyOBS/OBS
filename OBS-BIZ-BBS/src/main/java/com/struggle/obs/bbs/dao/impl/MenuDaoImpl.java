@@ -20,14 +20,14 @@ public class MenuDaoImpl extends GenericDaoImpl<Menu, Long> implements MenuDao{
     @Override
     public List<Menu> findTopList() {
         return getSession().createQuery(//
-                "FROM Menu p WHERE p.parent IS NULL")//
+                "FROM Menu p WHERE p.parent IS NULL ORDER BY p.sort ASC")//
                 .list();
     }
 
     @Override
     public Collection<String> getAllUrls() {
         return getSession().createQuery(//
-                "SELECT DISTINCT p.url FROM Menu p WHERE p.url IS NOT NULL")//
+                "SELECT DISTINCT p.url FROM Menu p WHERE p.url IS NOT NULL ORDER BY p.sort ASC")//
                 .list();
     }
 

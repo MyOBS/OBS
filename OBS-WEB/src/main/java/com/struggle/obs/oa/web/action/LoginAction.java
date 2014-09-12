@@ -29,7 +29,8 @@ public class LoginAction extends BaseAction<User> {
 			User user = userService.findAdminByPwd(model);
 			if (user == null) {
 				//<s:fielderror/>  用于前台显示错误信息
-				addFieldError("loginName", "用户名或密码不正确！");
+				//addFieldError("loginName", "用户名或密码不正确！");
+				message = "用户名或密码不正确！";
 				return NONE;
 			} else {
 				// 登录用户

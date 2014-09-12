@@ -20,4 +20,9 @@ public interface MenuService {
      * @return
      */
     Collection<String> getAllUrls();
+	/**
+	 * 初始化菜单列表
+	 * 2014年9月1日 上午12:10:03 void
+	 */
+	void initMenuData();
 }

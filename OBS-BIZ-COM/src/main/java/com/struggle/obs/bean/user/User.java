@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.struggle.obs.bean.bbs.Critique;
 import com.struggle.obs.bean.bbs.Reply;
@@ -38,18 +39,20 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	private boolean admin = false;
 	/** 是否在线 */
 	private boolean onLine = false;
+	/** 头像路径 */
+	private String headPhoto;
 	/** 积分 */
 	private UserCredit userCredit;
 	/** 基础信息 */
 	private BaseProfile baseProfile;
 	/** 联系方式 */
 	private ContactProfile contactProfile;
+	/** 教育情况 */
+	private EduProfile eduProfile;
 	/** 工作情况 */
 	private WorkProfile workProfile;
 	/** 个人信息 */
 	private InfoProfile infoProfile;
-	/** 教育情况 */
-	private EduProfile eduProfile;
 	/** 统计信息 */
 	private StatisticsProfile statisticsProfile;
 	/** 实名认证 */
@@ -63,6 +66,45 @@ public class User extends BaseModelSub implements java.io.Serializable {
 	/** 回复 */
 	private Set<Reply> replys = new HashSet<Reply>();
 	
+	// style/images/user/33/headPhoto/xxx.jpg
+	@Transient
+	public String getHeadPhotoFullPath(){
+		if(id != null && headPhoto!=null){
+			return "style/images/user/" + this.id + "/headPhoto/" + this.headPhoto;
+		}
+		return "";
+	}
+	@Transient
+	public String getHeadPhoto120FullPath(){
+		if(id != null && headPhoto!=null){
+			return "style/images/user/" + this.id + "/headPhoto/120_"+ this.headPhoto;
+		}
+		return "";
+	}
+	@Transient
+	public String getHeadPhoto30FullPath(){
+		if(id != null && headPhoto!=null){
+			return "style/images/user/" + this.id + "/headPhoto/30_" + this.headPhoto;
+		}
+		return "";
+	}
+	
+	/**
+	 * 头像路径 
+	 * @return 
+	 */
+	@Column(name="headPhoto")
+	public String getHeadPhoto() {
+		return headPhoto;
+	}
+
+	/**
+	 * @param 头像路径 headPhoto
+	 */
+	public void setHeadPhoto(String headPhoto) {
+		this.headPhoto = headPhoto;
+	}
+
 	/**
 	 * @return 登录名
 	 */

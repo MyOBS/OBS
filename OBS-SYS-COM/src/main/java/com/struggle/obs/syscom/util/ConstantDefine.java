@@ -89,9 +89,62 @@ public class ConstantDefine {
 	
 	/** 评分理由：用于常量表的recType */
 	public static final String SCORE_REAON = "score_reaon";
+	/** 技术方向：用于常量表的recType */
+	public static final String EDU_DIRECTION = "edu_direction";
+	/** 学历：用于常量表的recType */
+	public static final String EDU_EDUCATION = "edu_education";
+	/** 审核状态：用于常量表的recType */
+	public static final String AUDIT_STATU = "audit_statu";
+	/** 积分：用于常量表的recType */
+	public static final String CREDIT = "credit";
 	/** 支持 */
 	public static final String SUPPORT = "support";
 	/** 反对 */
 	public static final String AGAINST = "against";
-	
+	/**
+	 * 审核状态:未审核<br>
+	 * 1:未审核：用户保存实名认证信息<br>
+	 * 2:已启动：用户点击实名认证审核申请<br>
+	 * 3:已审核：管理员确认审核通过<br>
+	 * 4:已驳回：管理员驳回用户审核<br>
+	 * 5:已取消：用户启动后，可以取消审核
+	 */
+	public static final String UNAUDITED = "1";
+	/**
+	 * 审核状态:已启动<br>
+	 * 1:未审核：用户保存实名认证信息<br>
+	 * 2:已启动：用户点击实名认证审核申请<br>
+	 * 3:已审核：管理员确认审核通过<br>
+	 * 4:已驳回：管理员驳回用户审核<br>
+	 * 5:已取消：用户启动后，可以取消审核
+	 */
+	public static final String HAS_STARTED = "2";
+	/**
+	 * 审核状态:已审核<br>
+	 * 1:未审核：用户保存实名认证信息<br>
+	 * 2:已启动：用户点击实名认证审核申请<br>
+	 * 3:已审核：管理员确认审核通过<br>
+	 * 4:已驳回：管理员驳回用户审核<br>
+	 * 5:已取消：用户启动后，可以取消审核
+	 */
+	public static final String HAS_AUDITE = "3";
+	/**
+	 * 审核状态:已驳回<br>
+	 * 1:未审核：用户保存实名认证信息<br>
+	 * 2:已启动：用户点击实名认证审核申请<br>
+	 * 3:已审核：管理员确认审核通过<br>
+	 * 4:已驳回：管理员驳回用户审核<br>
+	 * 5:已取消：用户启动后，可以取消审核
+	 */
+	public static final String HAS_DISMISSED = "4";
+	/**
+	 * 审核状态:已取消<br>
+	 * 1:未审核：用户保存实名认证信息<br>
+	 * 2:已启动：用户点击实名认证审核申请<br>
+	 * 3:已审核：管理员确认审核通过<br>
+	 * 4:已驳回：管理员驳回用户审核<br>
+	 * 5:已取消：用户启动后，可以取消审核
+	 */
+	public static final String HAS_CANCELED = "5";
+
 }

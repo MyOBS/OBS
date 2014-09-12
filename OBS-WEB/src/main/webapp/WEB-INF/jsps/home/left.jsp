@@ -21,7 +21,7 @@
 				<%-- 显示一级菜单 --%>
 				<s:iterator value="#application.topUrlList">
 					<li class="level1">
-						<div onClick="menuClick(this);" class="level1Style">
+						<div onClick="menuClick(this);" class="level1Style" style="cursor: pointer;">
 							<img src="${basePath}style/images/MenuIcon/${icon}.gif" class="Icon" />
 							${name}
 						</div>
@@ -31,7 +31,7 @@
 								<li class="level2">
 									<div class="level2Style">
 										<img src="${basePath}style/images/MenuIcon/menu_arrow_single.gif" />
-										<a target="right" href="${basePath}${url}.action"> ${name}</a>
+										<a target="right" href="${basePath}${url}"> ${name}</a>
 									</div>
 								</li>
 							</s:iterator>

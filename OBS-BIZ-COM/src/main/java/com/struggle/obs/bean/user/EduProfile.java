@@ -6,6 +6,7 @@ package com.struggle.obs.bean.user;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
 import com.struggle.obs.syscom.bean.BaseModel;
@@ -124,7 +125,7 @@ public class EduProfile extends BaseModel {
 	 * 
 	 * @return
 	 */
-	@OneToOne(mappedBy = "eduProfile", optional=true, cascade = CascadeType.REFRESH)
+	@OneToOne(mappedBy = "eduProfile", optional=true, cascade = CascadeType.REFRESH,fetch=FetchType.LAZY)
 	public User getUser() {
 		return user;
 	}

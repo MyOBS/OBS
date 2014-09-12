@@ -16,8 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.struggle.obs.bbs.service.ConstsService;
+import com.struggle.obs.bbs.service.CreditLogService;
+import com.struggle.obs.bbs.service.CreditRuleService;
 import com.struggle.obs.bbs.service.CritiqueService;
 import com.struggle.obs.bbs.service.ForumService;
+import com.struggle.obs.bbs.service.RealNameVerifyService;
 import com.struggle.obs.bbs.service.ReplyService;
 import com.struggle.obs.bbs.service.ScoreService;
 import com.struggle.obs.bbs.service.ThemeService;
@@ -85,6 +88,12 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
     /**  点评 */
     @Autowired
     protected CritiqueService critiqueService;
+    @Autowired
+    protected RealNameVerifyService realNameVerifyService;
+    @Autowired
+    protected CreditLogService creditLogService;
+    @Autowired
+    protected CreditRuleService creditRuleService;
 
     // ---------------Action公共字段----------------------
 
@@ -93,9 +102,9 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
      */
     protected Integer pageNum = 1; // 当前页
     /**
-     * 每页显示多少条记录 Default=10
+     * 每页显示多少条记录 Default=30
      */
-    protected Integer pageSize = 10; // 每页显示多少条记录
+    protected Integer pageSize = 5; // 每页显示多少条记录
     /**
      * 每页页码数量 Default=10
      */
@@ -108,7 +117,7 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
     /**
      * Default：OK
      */
-    protected String result = ConstantDefine.MESSAGE_OK;
+    protected String result;
     /**
      * 用于存放历史url地址，即返回时的URL地址
      */

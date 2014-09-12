@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 
 import com.struggle.obs.bean.user.User;
 
@@ -24,14 +23,13 @@ public class CreditLog extends Credit {
 	private User user;
 	/** 操作 */
 	private CreditRule creditRule;
+	/** 收支: 1:收入 ;0:支出 */
+	private String ioe;
 	/** 详情 */
 	private String details;
 	/** url */
 	private String url;
-	/** 总次数：不与数据库关联 */
-	private int totalCount;
-	/** 周期次数：不与数据库关联 */
-	private int cycleCount;
+	
 
 	/**
 	 * 用户
@@ -107,43 +105,25 @@ public class CreditLog extends Credit {
 		this.url = url;
 	}
 
-	/**
-	 * 总次数：不与数据库关联
-	 * 
-	 * @return
-	 */
-	@Transient
-	public int getTotalCount() {
-		return totalCount;
-	}
-
-	/**
-	 * @param 总次数
-	 *            ：不与数据库关联 totalCount
-	 */
-	public void setTotalCount(int totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	/**
-	 * 周期次数：不与数据库关联
-	 * 
-	 * @return
-	 */
-	@Transient
-	public int getCycleCount() {
-		return cycleCount;
-	}
-
-	/**
-	 * @param 周期次数
-	 *            ：不与数据库关联 cycleCount
-	 */
-	public void setCycleCount(int cycleCount) {
-		this.cycleCount = cycleCount;
-	}
+	
 
 	public CreditLog() {
+	}
+
+	/**
+	 * 收支:1:收入;0:支出 
+	 * @return 
+	 */
+	@Column(name="ioe", length=1)
+	public String getIoe() {
+		return ioe;
+	}
+
+	/**
+	 * @param 收支:1:收入;0:支出 ioe
+	 */
+	public void setIoe(String ioe) {
+		this.ioe = ioe;
 	}
 
 }

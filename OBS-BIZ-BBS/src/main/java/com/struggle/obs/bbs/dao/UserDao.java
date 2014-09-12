@@ -2,6 +2,8 @@ package com.struggle.obs.bbs.dao;
 
 
 import com.struggle.obs.bean.user.User;
+import com.struggle.obs.formbean.UserForm;
+import com.struggle.obs.syscom.bean.Page;
 import com.struggle.obs.syscom.dao.GenericDao;
 
 /**
@@ -32,4 +34,12 @@ public interface UserDao extends GenericDao<User, Long>{
 	 * @return User
 	 */
 	User getNewUser();
+
+	/**
+	 * 2014年9月8日 下午9:05:39
+	 * @param userForm
+	 * @return List<User>
+	 */
+	Page<User> findByNoAudit(Integer pageNum, Integer pageSize,
+			Integer pages, UserForm userForm);
 }

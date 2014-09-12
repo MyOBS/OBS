@@ -173,7 +173,7 @@ public class TopicDaoImpl extends GenericDaoImpl<Topic, Long> implements
 		String hql = "SELECT COUNT(r.id) FROM Topic r WHERE r.forum.id=? AND r.deleteFlag=? AND r.addDate >= ? AND r.addDate < ?";
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DATE, 1);
-		// 获取昨天的日期
+		//  获取明天的日期
 		Date tomorrow = cal.getTime();
 		Long count = (Long) getSession().createQuery(hql)
 				.setParameter(0, forumId)

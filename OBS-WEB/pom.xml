@@ -11,9 +11,11 @@
 	<packaging>war</packaging>
 	<name>OBS-WEB Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<java.home>F:\java\jdk1.7.0_07</java.home>
+	</properties>
 	<dependencies>
-
-		<dependency>
+    	<dependency>
 			<groupId>com.struggle</groupId>
 			<artifactId>OBS-BIZ-COM</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -30,7 +32,18 @@
 		</dependency>
 
 		<!-- 3Party dependency -->
-
+		<!-- 
+		<dependency>
+            <groupId>jce</groupId>
+            <artifactId>jce</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>rt</groupId>
+            <artifactId>rt</artifactId>
+            <version>1.7</version>
+        </dependency>
+         -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
@@ -184,6 +197,12 @@
 					<password>managerPwd</password>
 					<path>/OBS-WEB</path>
 					<war-file>${project.build.directory}/${project.build.finalName}.war</war-file>
+					<!-- 
+					<compilerArguments>
+                        <verbose />
+                        <bootclasspath>${java.home}\jre\lib\rt.jar;${java.home}\jre\lib\jce.jar</bootclasspath>
+                    </compilerArguments>
+					 -->
 				</configuration>
 			</plugin>
 		</plugins>

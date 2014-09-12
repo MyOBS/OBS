@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <div id=PageSelectorBar>
+<s:if test="pager.totalPage>1">	
 	<div id=PageSelectorMemo>
 		页次：${pager.pageNum}/${pager.totalPage }页 &nbsp;
 		每页显示：${pager.pageSize }条 &nbsp;
@@ -29,15 +30,18 @@
 		
 		转到：
 		<select onchange="gotoPage(this.value)" id="_pn">
+		<s:if test="pager.totalPage>1">		
 			<s:iterator begin="1" end="pager.totalPage" var="num">
 				<option value="${num}">${num}</option>
 			</s:iterator>
+		</s:if>
 		</select>
 		<script type="text/javascript">
 			$("#_pn").val("${pageNum}");
 		</script>
 		
 	</div>
+</s:if>
 </div>
 
 

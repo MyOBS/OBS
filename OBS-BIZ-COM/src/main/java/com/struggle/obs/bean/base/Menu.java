@@ -29,6 +29,7 @@ public class Menu extends BaseModel implements java.io.Serializable{
     private String name;// 菜单名称
     private String url;//菜单地址
     private String icon;//图标
+    private int sort;//排序
     
     private Menu parent;
     private Set<Menu> children = new HashSet<Menu>(); // 下级菜单
@@ -40,7 +41,22 @@ public class Menu extends BaseModel implements java.io.Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    @Column(name="url")
+    
+    /**
+	 * sort 
+	 * @return 
+	 */
+    @Column(name="sort",length=2)
+	public int getSort() {
+		return sort;
+	}
+	/**
+	 * @param sort sort
+	 */
+	public void setSort(int sort) {
+		this.sort = sort;
+	}
+	@Column(name="url")
     public String getUrl() {
         return url;
     }
@@ -66,7 +82,7 @@ public class Menu extends BaseModel implements java.io.Serializable{
     
     //fetch=FetchType.EAGER :懒加载，查询一方时，另一方用不用都一起查出来
     @OneToMany(cascade={CascadeType.ALL} , mappedBy="parent" , fetch=FetchType.EAGER)
-    @OrderBy("id ASC")
+    @OrderBy("sort ASC")
     public Set<Menu> getChildren() {
         return children;
     }

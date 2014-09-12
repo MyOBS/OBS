@@ -3,10 +3,15 @@
  */
 package com.struggle.obs.bean.user;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.struggle.obs.syscom.bean.BaseModel;
 
@@ -39,6 +44,20 @@ public class RealNameVerify extends BaseModel{
 	private String directionCode;
 	/** 技术方向名称：.net,java,c++,c#等， 该值从Consts表中获取 */
 	private String directionName;
+	/** 认证时间 */
+	private Date verifyTime;
+	/** 审核时间 */
+	private Date auditTime;
+	/** 审核状态:
+	 * 1:未审核：用户保存实名认证信息
+	 * 2:已启动：用户点击实名认证审核申请
+	 * 3:已审核：管理员确认审核通过
+	 * 4:已驳回：管理员驳回用户审核
+	 * 5:已取消：用户启动后，可以取消审核
+	 */
+	private String audit;
+	/** 审核人 */
+	private String auditUser;
 	
 	/**
 	 * 真实姓名 
@@ -183,7 +202,7 @@ public class RealNameVerify extends BaseModel{
 	 * 所属用户 
 	 * @return 
 	 */
-	@OneToOne(mappedBy="realNameVerify", cascade=CascadeType.REFRESH)
+	@OneToOne(mappedBy="realNameVerify", cascade=CascadeType.REFRESH,fetch=FetchType.LAZY)
 	public User getUser() {
 		return user;
 	}
@@ -195,5 +214,75 @@ public class RealNameVerify extends BaseModel{
 	}
 	public RealNameVerify() {
 	}
+	/**
+	 * 认证时间 
+	 * @return 
+	 */
+	@Column(name="verifyTime")
+	@Temporal(value = TemporalType.TIMESTAMP)
+	public Date getVerifyTime() {
+		return verifyTime;
+	}
+	/**
+	 * @param 认证时间 verifyTime
+	 */
+	public void setVerifyTime(Date verifyTime) {
+		this.verifyTime = verifyTime;
+	}
+	/**
+	 * 审核时间 
+	 * @return 
+	 */
+	@Column(name="auditTime")
+	@Temporal(value = TemporalType.TIMESTAMP)
+	public Date getAuditTime() {
+		return auditTime;
+	}
+	/**
+	 * @param 审核时间 auditTime
+	 */
+	public void setAuditTime(Date auditTime) {
+		this.auditTime = auditTime;
+	}
+	/**
+	 *  审核状态
+	 * 1:未审核：用户保存实名认证信息
+	 * 2:已启动：用户点击实名认证审核申请
+	 * 3:已审核：管理员确认审核通过
+	 * 4:已驳回：管理员驳回用户审核
+	 * 5:已取消：用户启动后，可以取消审核
+	 * @return 
+	 */
+	@Column(name="audit")
+	public String getAudit() {
+		return audit;
+	}
+	/**
+	 * 1:未审核：用户保存实名认证信息
+	 * 2:已启动：用户点击实名认证审核申请
+	 * 3:已审核：管理员确认审核通过
+	 * 4:已驳回：管理员驳回用户审核
+	 * 5:已取消：用户启动后，可以取消审核
+	 * @param 审核状态
+	 */
+	public void setAudit(String audit) {
+		this.audit = audit;
+	}
+	/**
+	 * 审核人 
+	 * @return 
+	 */
+	@Column(name="auditUser")
+	public String getAuditUser() {
+		return auditUser;
+	}
+	/**
+	 * @param 审核人 auditUser
+	 */
+	public void setAuditUser(String auditUser) {
+		this.auditUser = auditUser;
+	}
+	
+	
 
 }

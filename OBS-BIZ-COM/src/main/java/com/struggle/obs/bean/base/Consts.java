@@ -45,7 +45,7 @@ public class Consts extends BaseModel{
 	 * 记录值 
 	 * @return 
 	 */
-	@Column(name="recValue",length=5)
+	@Column(name="recValue",length=20)
 	public String getRecValue() {
 		return recValue;
 	}

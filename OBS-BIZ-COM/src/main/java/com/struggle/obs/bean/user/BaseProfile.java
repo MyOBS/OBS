@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,7 +33,7 @@ public class BaseProfile extends BaseModel{
 	private String birthCity;
 	/** 居住地 */
 	private String resideCity;
-	/** 昵称 */
+	/** 真实姓名 */
 	private  String realName;
 	
 	/**
@@ -101,7 +102,7 @@ public class BaseProfile extends BaseModel{
 	}
 
 	/**
-	 * 昵称 
+	 * 真实姓名 
 	 * @return 
 	 */
 	@Column(name="realName", length=16)
@@ -110,7 +111,7 @@ public class BaseProfile extends BaseModel{
 	}
 
 	/**
-	 * @param 昵称 realName
+	 * @param 真实姓名realName
 	 */
 	public void setRealName(String realName) {
 		this.realName = realName;
@@ -120,7 +121,7 @@ public class BaseProfile extends BaseModel{
 	 * 所属用户 
 	 * @return 
 	 */
-	@OneToOne(mappedBy="baseProfile", cascade=CascadeType.REFRESH)
+	@OneToOne(mappedBy="baseProfile", cascade=CascadeType.REFRESH,fetch=FetchType.LAZY)
 	public User getUser() {
 		return user;
 	}

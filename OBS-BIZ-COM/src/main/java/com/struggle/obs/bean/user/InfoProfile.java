@@ -6,6 +6,7 @@ package com.struggle.obs.bean.user;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
 import com.struggle.obs.syscom.bean.BaseModel;
@@ -88,7 +89,7 @@ public class InfoProfile  extends BaseModel {
 	 * 所属用户 
 	 * @return 
 	 */
-	@OneToOne(mappedBy="infoProfile", cascade=CascadeType.REFRESH)
+	@OneToOne(mappedBy="infoProfile", cascade=CascadeType.REFRESH,fetch=FetchType.LAZY)
 	public User getUser() {
 		return user;
 	}

@@ -75,7 +75,7 @@ ul {
 
 #Title_bar_Head {
 	float: left;
-	padding-left: 12px;
+	padding-left: 0px;
 	padding-top: 11px;
 }
 
@@ -101,7 +101,7 @@ ul {
 	float: left;
 	background: url(images/title_bg_head.gif) no-repeat;
 	height: 28px;
-	width: 5px;
+	width: 0px;
 }
 
 #Title {
@@ -121,7 +121,7 @@ ul {
 	float: left;
 	background: url(images/title_bg_end.gif) no-repeat;
 	height: 28px;
-	width: 80px;
+	width: 40px;
 }
 
 .Btn {
@@ -160,13 +160,13 @@ ul {
 	border-right: 1px solid #004779;
 }
 
-#MainArea {
+#MainArea,#MainArea_2,#MainArea_3,#MainArea_4,#MainArea_5 {
 	width: 100%;
 	background: url(images/inputPageHeadBg.gif) repeat-x;
 	border-top: 2px solid #ffffff;
 }
 
-#MainArea form{
+#MainArea form,#MainArea_2 form,#MainArea_3 form,#MainArea_4 form,#MainArea_5 form{
 	padding-left: 50px;
 }
 
@@ -264,7 +264,7 @@ ul {
 	padding: 10px;
 }
 
-#InputDetailBar {
+#InputDetailBar,#InputDetailBar_2,#InputDetailBar_3,#InputDetailBar_4,#InputDetailBar_5 {
 	float: left;
 	width: 80%;
 	margin-bottom: 35px;
@@ -272,8 +272,11 @@ ul {
 	text-align: center;
 }
 
-#InputDetailBar img,
-#InputDetailBar input{
+#InputDetailBar img,#InputDetailBar input,
+#InputDetailBar_2 img,#InputDetailBar_2 input,
+#InputDetailBar_3 img,#InputDetailBar_3 input,
+#InputDetailBar_4 img,#InputDetailBar_4 input,
+#InputDetailBar_5 img,#InputDetailBar_5 input{
 	margin-right: 15px;
 }
 
@@ -480,7 +483,11 @@ A.OpenWinLink:hover {
 
 
 #Description, 
-.Description {
+.Description,
+.Description_2,
+.Description_3,
+.Description_4,
+.Description_5 {
 	float: left;
 	width: 90%;
 	margin-bottom: 35px;
